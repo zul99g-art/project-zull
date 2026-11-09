@@ -34,6 +34,10 @@
         .sidebar ul li a { display: block; padding: 10px 20px; color: #adb5bd; text-decoration: none; }
         .sidebar ul li a:hover, .sidebar ul li a.active { background: #343a40; color: #fff; }
 
+        .sidebar form { margin: 0; }
+        .sidebar .logout { display: block; width: 100%; text-align: left; padding: 10px 20px; border: 0; background: #dc3545; color: #fff; font: inherit; cursor: pointer; }
+        .sidebar .logout:hover { background: #bb2d3b; }
+
         /* Konten */
         .main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
         .topbar { background: rgba(255, 255, 255, 0.9); padding: 14px 25px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; border-bottom: 1px solid #dee2e6; }
@@ -70,13 +74,19 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="{{ route('admin.index') }}" class="active">Projects</a></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="logout">Logout</button>
+                    </form>
+                </li>
             </ul>
         </aside>
 
         <!-- AREA UTAMA -->
         <div class="main">
             <div class="topbar">
-                <span>Halo, Administrator</span>
+                <span>Halo, {{ auth()->user()->name ?? 'Administrator' }}</span>
             </div>
 
             <div class="content">

@@ -46,7 +46,10 @@
             <h1>Admin Dashboard</h1>
             <p>Halaman Kelola Projects</p>
         </div>
-        <a href="{{ route('admin.create') }}" class="btn btn-primary">Tambah Data</a>
+        <div style="display:flex; gap:8px; flex-shrink:0;">
+            <a href="{{ route('admin.export') }}" class="btn btn-danger">Export PDF</a>
+            <a href="{{ route('admin.create') }}" class="btn btn-primary">Tambah Data</a>
+        </div>
     </div>
 
     <div class="card">

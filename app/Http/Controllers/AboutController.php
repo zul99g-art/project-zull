@@ -7,10 +7,10 @@ class AboutController extends Controller
     public function index()
     {
         $mahasiswa = [
-            'nama' => 'Yohanes',
+            'nama' => 'Nuzul',
             'status' => 'Mahasiswa Aktif',
-            'nim' => '251011700547',
-            'email' => 'irfansuardy688@gmail.com',
+            'nim' => '251011700332',
+            'email' => 'zul99g@gmail.com',
             'prodi' => 'Sistem Informasi',
         ];
 
